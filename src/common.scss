@@ -1,0 +1,68 @@
+$breakpoint-mobile: 740px; // mobile
+$breakpoint-tablet: 1100px; // tablet
+
+// color guide
+$main-blueColor: #00448e;
+$main-orangeColor: #f8991d;
+$main-grayColor: #525d5c;
+$main-lightGrayColor: #c9cacc;
+
+// font-size guide
+$normal-title: 2rem;
+$normal-sub: 1.125rem;
+
+@mixin backgroundDefaultStyle {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin limiter {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+@mixin flexDefaultStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin font-en {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin container {
+  @include backgroundDefaultStyle;
+  @include flexDefaultStyle;
+  padding: 12rem 0 4rem;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+
+@mixin normalTitleStyle {
+  font-size: $normal-title;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+// responsive size
+@mixin mobile {
+  @media screen and (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}

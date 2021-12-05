@@ -1,0 +1,133 @@
+@import '../../common.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+
+  > .limiter {
+    @include limiter;
+
+    > .title {
+      @include normalTitleStyle;
+    }
+    > .sub {
+      font-size: $normal-sub;
+      text-align: center;
+      line-height: 1.5;
+    }
+    > .elements {
+      margin-top: 3rem;
+
+      > li {
+        display: flex;
+        align-items: flex-start;
+
+        &:not(:first-child) {
+          margin-top: 3rem;
+        }
+        @include mobile {
+          flex-direction: column;
+        }
+        > .label {
+          width: 10rem;
+          color: $main-blueColor;
+          font-size: 1.125rem;
+
+          @include mobile {
+            width: 100%;
+            margin-bottom: 1rem;
+            text-align: center;
+          }
+        }
+        > .content {
+          flex: 1;
+
+          @include mobile {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          img {
+            width: 100%;
+          }
+          > .signs {
+            display: flex;
+
+            @include mobile {
+              flex-direction: column;
+            }
+            > li {
+              width: 50%;
+
+              @include mobile {
+                width: 100%;
+                margin-bottom: 2rem;
+              }
+              > .sign {
+                @include mobile {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                }
+                > .sublabel {
+                  font-size: 1rem;
+                  color: $main-blueColor;
+                  padding-bottom: 1rem;
+                }
+              }
+            }
+          }
+          > .colors {
+            display: flex;
+            width: 100%;
+
+            @include mobile {
+              flex-direction: column;
+            }
+            > li {
+              border: 1px solid #bbb;
+              box-sizing: border-box;
+              width: 25%;
+
+              @include mobile {
+                width: 100%;
+              }
+              &:not(:first-child) {
+                margin-left: 1rem;
+
+                @include mobile {
+                  margin-top: 1rem;
+                  margin-left: initial;
+                }
+              }
+              > .color {
+                min-height: 5rem;
+                padding: 1rem 0.5rem 0.5rem;
+                box-sizing: border-box;
+                display: flex;
+                align-items: flex-end;
+
+                > .colorName {
+                  color: #fff;
+                  font-size: 0.9rem;
+                }
+              }
+              > .info {
+                padding: 0.25rem 0;
+
+                > span {
+                  display: block;
+                  font-size: 0.8rem;
+                  font-weight: 300;
+                  padding: 0.25rem 0.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

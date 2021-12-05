@@ -1,0 +1,40 @@
+@import '../common.scss';
+
+.container {
+  @include flexDefaultStyle;
+  background-color: $main-orangeColor;
+  padding: 4rem 0;
+
+  > .limiter {
+    @include limiter;
+    text-align: center;
+
+    > .title {
+      @include font-en;
+      letter-spacing: 1px;
+      line-height: 1.25;
+      font-size: $normal-title;
+      color: #fff;
+
+      @include mobile {
+        font-size: 1.4rem;
+      }
+    }
+    > .sub {
+      margin-top: 1rem;
+      color: #fff;
+      font-size: $normal-sub;
+      line-height: 2;
+      box-sizing: border-box;
+
+      @include mobile {
+        font-size: 0.95rem;
+      }
+
+      > span {
+        display: block;
+        line-height: inherit;
+      }
+    }
+  }
+}

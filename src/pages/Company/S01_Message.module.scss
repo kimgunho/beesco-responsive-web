@@ -1,0 +1,85 @@
+@import '../../common.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+
+  @include mobile {
+    padding-bottom: 2rem;
+  }
+  > .limiter {
+    @include limiter;
+
+    > .title {
+      @include normalTitleStyle;
+    }
+    > .info {
+      @include flexAlignCenter;
+
+      @include mobile {
+        flex-direction: column;
+      }
+      > .text {
+        padding-right: 6rem;
+
+        @include tablet {
+          padding-right: 4rem;
+        }
+        @include mobile {
+          padding-right: initial;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+        > .title {
+          font-size: 1.4rem;
+          line-height: 1.5;
+          font-weight: 500;
+        }
+        > .sub {
+          margin-top: 1.2rem;
+          font-size: 0.9rem;
+          line-height: 1.6;
+
+          > .lastText {
+            font-size: 1rem;
+            display: block;
+            line-height: 1.5;
+            font-weight: 500;
+            margin-top: 1.2rem;
+          }
+        }
+        > .sign {
+          margin-top: 2rem;
+          display: flex;
+          align-items: center;
+
+          @include mobile {
+            justify-content: center;
+          }
+          > .writer {
+            font-size: 0.9rem;
+            margin-right: 1rem;
+          }
+          > .en {
+            display: none;
+          }
+        }
+      }
+      > .slider {
+        width: 30%;
+
+        @include tablet {
+          width: 40%;
+        }
+        @include mobile {
+          width: 100%;
+          max-width: 20rem;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

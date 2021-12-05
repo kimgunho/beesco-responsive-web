@@ -1,0 +1,71 @@
+@import '../../common.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+
+  > .limiter {
+    @include limiter;
+
+    > .title {
+      @include normalTitleStyle;
+    }
+    > .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include mobile {
+        flex-direction: column;
+      }
+      > .image {
+        width: 40%;
+
+        @include mobile {
+          width: 100%;
+          max-width: 20rem;
+        }
+        > img {
+          width: 100%;
+        }
+      }
+      > .history {
+        width: 50%;
+
+        @include mobile {
+          width: 100%;
+          margin-top: 2rem;
+        }
+        > .list {
+          > li {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+
+            &:not(:first-child) {
+              margin-top: 1.2rem;
+            }
+
+            @include mobile {
+              align-items: flex-start;
+            }
+
+            > .date {
+              padding-right: 2rem;
+              min-width: 5rem;
+
+              @include mobile {
+                padding-right: 1rem;
+              }
+            }
+
+            > .did {
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}

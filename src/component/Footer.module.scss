@@ -1,0 +1,51 @@
+@import '../common.scss';
+
+footer {
+  background-color: #333;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+
+  > .limiter {
+    @include limiter;
+
+    > .info {
+      @include flexAlignCenter;
+      justify-content: space-between;
+
+      @include tablet {
+        flex-direction: column;
+      }
+      > li {
+        color: #fff;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+
+        @include mobile {
+          text-align: center;
+        }
+        img {
+          margin-top: -4px;
+        }
+      }
+    }
+  }
+}
+.topButton {
+  @include flexDefaultStyle;
+  width: 2.4rem;
+  height: 2rem;
+  background-color: #3f3f3f;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  position: fixed;
+  bottom: 0;
+  right: 20%;
+  cursor: pointer;
+  display: none;
+
+  &.show {
+    display: flex;
+  }
+}

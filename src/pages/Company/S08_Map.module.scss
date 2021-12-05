@@ -1,0 +1,113 @@
+@import '../../common.scss';
+
+.container {
+  @include flexDefaultStyle;
+  flex-direction: column;
+  padding-top: 4rem;
+  background-color: #eee;
+
+  > .limiter {
+    @include limiter;
+
+    > .title {
+      @include normalTitleStyle;
+    }
+    > .label {
+      color: $main-blueColor;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+    .table {
+      background-color: white;
+
+      > .row {
+        @include flexAlignCenter;
+        border-bottom: 1px solid #eee;
+
+        @include mobile {
+          flex-direction: column;
+        }
+        > .header {
+          padding: 0.5rem 1rem;
+          color: $main-blueColor;
+
+          &.level1 {
+            font-size: 1rem;
+            width: 8rem;
+
+            @include mobile {
+              box-sizing: border-box;
+              width: 100%;
+              text-align: center;
+              background-color: $main-lightGrayColor;
+            }
+          }
+          &.level2 {
+            font-size: 0.8rem;
+            width: 10rem;
+            line-height: 1.4;
+
+            @include mobile {
+              text-align: center;
+            }
+          }
+        }
+        > .body {
+          flex: 1;
+          border-left: 1px solid #eee;
+          font-size: 0.7rem;
+          line-height: 1.5;
+          box-sizing: border-box;
+          padding: 0.5rem 1rem;
+
+          @include mobile {
+            width: 100%;
+          }
+          &.hasTable {
+            padding: 0;
+          }
+          .accentBlue {
+            color: $main-blueColor;
+          }
+          .accentOrange {
+            color: $main-orangeColor;
+          }
+        }
+      }
+    }
+  }
+  > .mapBox {
+    width: 100%;
+    margin-top: 4rem;
+
+    > .tab {
+      display: flex;
+
+      @include mobile {
+        flex-direction: column;
+      }
+      > li {
+        white-space: nowrap;
+        cursor: pointer;
+        width: 25%;
+        padding: 1rem;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: $main-blueColor;
+        color: white;
+
+        &.on {
+          background-color: $main-orangeColor;
+        }
+        @include mobile {
+          width: 100%;
+          border-top: 1px solid $main-lightGrayColor;
+        }
+      }
+    }
+    > .map {
+      width: 100%;
+      min-height: 25rem;
+    }
+  }
+}

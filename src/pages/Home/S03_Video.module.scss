@@ -1,0 +1,17 @@
+@import '../../common.scss';
+
+.container {
+  line-height: 0;
+
+  > .video {
+    width: 100%;
+    min-height: 1000px;
+
+    @include tablet {
+      min-height: 600px;
+    }
+    @include mobile {
+      min-height: 300px;
+    }
+  }
+}

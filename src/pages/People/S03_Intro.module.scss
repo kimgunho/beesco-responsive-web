@@ -1,0 +1,52 @@
+@import '../../common.scss';
+
+.container {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+
+  > .limiter {
+    @include limiter;
+    @include flexDefaultStyle;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    > .info {
+      width: 50%;
+      padding-right: 2rem;
+      box-sizing: border-box;
+
+      @include tablet {
+        width: 100%;
+        padding-right: initial;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      > .title {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+
+      > .text {
+        margin-top: 1.2rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+    }
+
+    > .image {
+      width: 50%;
+
+      @include tablet {
+        width: 100%;
+      }
+      > img {
+        width: 100%;
+      }
+    }
+  }
+}

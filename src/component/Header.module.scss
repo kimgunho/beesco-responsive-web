@@ -1,0 +1,115 @@
+@import '../common.scss';
+
+header {
+  @include limiter;
+  @include flexAlignCenter;
+  justify-content: space-between;
+  position: fixed;
+  top: 1.6rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+  padding: 0 1rem;
+  height: 3.2rem;
+
+  @include tablet {
+    width: 90%;
+  }
+  @include mobile {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    justify-content: space-between;
+    background-color: #fff;
+    border-bottom: 1px solid $main-lightGrayColor;
+  }
+  > .mobileMenuButton {
+    display: none;
+
+    @include mobile {
+      display: block;
+      color: $main-lightGrayColor;
+    }
+  }
+  > .gnb {
+    display: flex;
+
+    @include mobile {
+      display: none;
+      position: fixed;
+      top: 3.2rem;
+      left: 0;
+      right: 0;
+      background-color: #f9f9f9;
+      flex-direction: column;
+
+      &.on {
+        display: block;
+      }
+    }
+    > .menus {
+      @include flexAlignCenter;
+
+      @include mobile {
+        flex-direction: column;
+      }
+      > li {
+        &:not(:first-child) {
+          margin-left: 1.5rem;
+
+          @include mobile {
+            margin-left: initial;
+          }
+        }
+        @include mobile {
+          width: 100%;
+        }
+        > a {
+          @include font-en;
+          display: block;
+          font-weight: 500;
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          padding: 0.5rem;
+
+          &.active {
+            color: $main-orangeColor;
+          }
+          &:hover {
+            color: $main-blueColor;
+          }
+          @include mobile {
+            border-top: 1px solid #dadada;
+            padding: 1rem;
+          }
+        }
+      }
+    }
+    > .langs {
+      display: flex;
+      justify-content: space-evenly;
+      min-width: 4rem;
+      cursor: pointer;
+
+      @include mobile {
+        flex-direction: column;
+      }
+      > li {
+        @include flexAlignCenter;
+
+        @include mobile {
+          border-top: 1px solid #dadada;
+          width: 100%;
+          padding: 1rem;
+
+          &:last-child {
+            border-bottom: 1px solid #dadada;
+          }
+        }
+      }
+    }
+  }
+}

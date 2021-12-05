@@ -1,0 +1,46 @@
+@import '../../common.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+  background-color: #eee;
+
+  > .limiter {
+    @include limiter;
+    @include flexAlignCenter;
+    flex-direction: column;
+
+    > .title {
+      @include normalTitleStyle;
+    }
+    > .slogan {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: $main-blueColor;
+      font-style: italic;
+      margin-bottom: 3rem;
+
+      @include mobile {
+        font-size: 2rem;
+      }
+      > .accent {
+        color: $main-orangeColor;
+      }
+      > br {
+        display: none;
+
+        @include mobile {
+          display: block;
+        }
+      }
+    }
+    > img {
+      padding: 1rem;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 28rem;
+    }
+  }
+}

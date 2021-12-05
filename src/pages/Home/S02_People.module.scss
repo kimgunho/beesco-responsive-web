@@ -1,0 +1,84 @@
+@import '../../common.scss';
+
+.container {
+  @include flexDefaultStyle;
+  padding: 4rem 0;
+
+  @include mobile {
+    padding: 0;
+  }
+  > .limiter {
+    @include limiter;
+    display: flex;
+    flex-direction: row;
+
+    @include mobile {
+      flex-direction: column;
+    }
+    > .button {
+      flex: 1;
+
+      &.recruit {
+        border-right: 2px solid $main-blueColor;
+
+        @include mobile {
+          border-right: none;
+          border-bottom: 1px solid $main-blueColor;
+        }
+        .image {
+          background-image: url('../../assets/images/home/icon-recruit.png');
+        }
+      }
+      &.welfare {
+        .image {
+          background-image: url('../../assets/images/home/icon-welfare.png');
+        }
+      }
+      > a {
+        @include flexDefaultStyle;
+
+        @include mobile {
+          flex-direction: column;
+          padding: 2rem;
+        }
+        > .image {
+          @include backgroundDefaultStyle;
+          width: 3.6rem;
+          height: 3.6rem;
+
+          @include mobile {
+            width: 4.8rem;
+            height: 4.8rem;
+            margin-bottom: 1.5rem;
+          }
+        }
+        > .title {
+          text-align: center;
+          margin: 0 1.5rem;
+          color: $main-blueColor;
+          font-size: 1.6rem;
+          font-weight: 500;
+          line-height: 1.4;
+
+          > .company {
+            @include font-en;
+            display: block;
+            font-weight: 400;
+          }
+        }
+        > .more {
+          @include flexDefaultStyle;
+          background-color: $main-blueColor;
+          color: #fff;
+          width: 2.4rem;
+          height: 2.4rem;
+          border-radius: 50%;
+
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

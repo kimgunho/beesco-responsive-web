@@ -1,0 +1,44 @@
+@import '../common.scss';
+
+.container {
+  @include container;
+  flex-direction: column;
+  background-attachment: fixed;
+
+  @include mobile {
+    min-height: initial;
+    padding: 6rem 0 4rem;
+    background-attachment: unset;
+  }
+  > h2 {
+    @include font-en;
+    color: #fff;
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(black, 0.4);
+    position: relative;
+
+    &.ko {
+      &::after {
+        position: absolute;
+        left: 50%;
+        bottom: -32px;
+        transform: translateX(-50%);
+        width: 3rem;
+        height: 5px;
+        background-color: #fff;
+        content: '';
+      }
+    }
+
+    @include mobile {
+      font-size: 3rem;
+    }
+  }
+  > .sub {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-top: 3rem;
+  }
+}

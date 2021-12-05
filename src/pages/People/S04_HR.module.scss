@@ -1,0 +1,98 @@
+@import '../../common.scss';
+
+.container {
+  padding: 4rem 0;
+  display: flex;
+  background-color: #e5ecf3;
+  justify-content: center;
+  text-align: center;
+
+  > .limiter {
+    @include limiter;
+
+    > .title {
+      @include normalTitleStyle;
+    }
+    > .rules {
+      display: flex;
+      justify-content: space-between;
+
+      @include mobile {
+        flex-direction: column;
+      }
+      > li {
+        flex: 1;
+        background-color: #fff;
+        padding: 2rem;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-left: 1rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+        &:hover {
+          > .label,
+          > img,
+          > .more {
+            display: none;
+          }
+          > .text {
+            opacity: 1;
+          }
+        }
+        @include mobile {
+          min-height: 14rem;
+          margin-left: initial;
+
+          &:not(:first-child) {
+            margin-top: 1rem;
+          }
+        }
+        > .label {
+          color: $main-blueColor;
+          font-size: 1.125rem;
+        }
+        > img {
+          margin-top: 1rem;
+          width: 100%;
+          max-width: 3.75rem;
+        }
+        > .more {
+          @include flexDefaultStyle;
+          background-color: $main-blueColor;
+          color: #fff;
+          width: 2.4rem;
+          height: 2.4rem;
+          border-radius: 50%;
+          margin-top: 1rem;
+        }
+        > .text {
+          @include flexDefaultStyle;
+          font-size: 0.9rem;
+          line-height: 1.6;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          padding: 2rem;
+          box-sizing: border-box;
+          width: 100%;
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+
+          @include tablet {
+            font-size: 0.8rem;
+          }
+          @include mobile {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}

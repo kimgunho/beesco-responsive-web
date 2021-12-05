@@ -1,0 +1,16 @@
+@import './common.scss';
+
+.wrapper {
+  @include mobile {
+    margin-top: 3.2rem;
+  }
+  > .notFound {
+    @include flexDefaultStyle;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.6rem;
+    color: $main-orangeColor;
+    font-weight: 300;
+    text-align: center;
+  }
+}

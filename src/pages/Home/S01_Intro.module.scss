@@ -1,0 +1,37 @@
+@import '../../common.scss';
+
+.container {
+  @include container;
+  flex-direction: column;
+  background-image: url('../../assets/images/home/bg-desktop.jpg');
+
+  @include mobile {
+    min-height: initial;
+    padding: 50% 0;
+    background-image: url('../../assets/images/home/bg-mobile.jpg');
+  }
+  > .box {
+    @include backgroundDefaultStyle;
+    width: 14rem;
+    height: 13rem;
+    margin: auto;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+
+    &.en {
+      display: none;
+    }
+  }
+  > .sub {
+    @include font-en;
+    text-align: center;
+    color: #fff;
+    font-size: 2.25rem;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@import '../../common.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+
+  > .limiter {
+    @include limiter;
+    @include flexAlignCenter;
+    flex-direction: column;
+
+    > img {
+      padding: 6rem 0;
+      width: 100%;
+
+      &.desktop {
+        display: block;
+        max-width: 44rem;
+
+        @include mobile {
+          display: none;
+        }
+      }
+      &.mobile {
+        display: none;
+        max-width: 18rem;
+
+        @include mobile {
+          display: block;
+        }
+      }
+    }
+    > .wrapper {
+      > li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+
+        &.reverse {
+          flex-direction: row-reverse;
+
+          > .info {
+            padding: 0 0 0 2rem;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @include tablet {
+          flex-direction: column;
+
+          &.reverse {
+            flex-direction: column;
+
+            > .info {
+              padding: 0;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        > .info {
+          width: 50%;
+          box-sizing: border-box;
+          padding-right: 2rem;
+
+          @include tablet {
+            width: 100%;
+            padding-right: 0rem;
+            margin-bottom: 1rem;
+          }
+          > .title {
+            position: relative;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.4;
+
+            &::after {
+              position: absolute;
+              bottom: -25px;
+              left: 0;
+              width: 24px;
+              height: 3px;
+              background-color: black;
+              content: '';
+            }
+            > .sub {
+              display: block;
+              padding-bottom: 0.5rem;
+              font-size: 0.8rem;
+              font-weight: 400;
+            }
+          }
+          > .text {
+            margin-top: 2.4rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+          }
+          > .detail {
+            margin-top: 1rem;
+            margin-left: 1rem;
+
+            > li {
+              font-size: 0.8rem;
+              list-style-type: decimal;
+              line-height: 1.4;
+              margin-bottom: 1rem;
+
+              > ol {
+                margin-top: 0.5rem;
+                margin-left: 1rem;
+
+                > li {
+                  margin-bottom: 0.5rem;
+                  list-style-type: disc;
+                  line-height: 1.4;
+                }
+              }
+            }
+          }
+        }
+        > .image {
+          @include backgroundDefaultStyle;
+          width: 45%;
+          max-height: 24rem;
+
+          @include tablet {
+            width: 100%;
+            min-height: 20rem;
+            margin-bottom: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
